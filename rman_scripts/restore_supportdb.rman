@@ -1,0 +1,88 @@
+run{
+# allocate channel
+allocate channel ch00 type 'sbt_tape';
+allocate channel ch01 type 'sbt_tape';
+allocate channel ch02 type 'sbt_tape';
+allocate channel ch03 type 'sbt_tape';
+send 'nb_ora_serv=branchnbumaster, nb_ora_client=whllemdb1';
+
+# rename database datafile
+set newname for database to '/oradata/supportdb/datafile/%b';
+
+# rename database tempfile
+set newname for tempfile 1 to '/oradata/supportdb/tempfile/temp01.dbf';
+set newname for tempfile 2 to '/oradata/supportdb/tempfile/temp02.dbf';
+set newname for tempfile 3 to '/oradata/supportdb/tempfile/temp03.dbf';
+set newname for tempfile 4 to '/oradata/supportdb/tempfile/temp04.dbf';
+set newname for tempfile 5 to '/oradata/supportdb/tempfile/temp05.dbf';
+
+# rename database redo log name
+SQL "alter database rename file ''+DATADG/supportdb/onlinelog/group_1.261.988382449'' TO ''/oradata/supportdb/onlinelog/group_1.261.988382449'' ";
+SQL "alter database rename file ''+ARCHDG/supportdb/onlinelog/group_1.266.988382455'' TO ''/oradata/supportdb/onlinelog/group_1.266.988382455'' ";
+SQL "alter database rename file ''+DATADG/supportdb/onlinelog/group_3.315.988382315'' TO ''/oradata/supportdb/onlinelog/group_3.315.988382315'' ";
+SQL "alter database rename file ''+ARCHDG/supportdb/onlinelog/group_3.262.988382321'' TO ''/oradata/supportdb/onlinelog/group_3.262.988382321'' ";
+SQL "alter database rename file ''+DATADG/supportdb/onlinelog/group_11.335.988382065'' TO ''/oradata/supportdb/onlinelog/group_11.335.988382065'' ";
+SQL "alter database rename file ''+ARCHDG/supportdb/onlinelog/group_11.256.988382071'' TO ''/oradata/supportdb/onlinelog/group_11.256.988382071'' ";
+SQL "alter database rename file ''+DATADG/supportdb/onlinelog/group_12.336.988382079'' TO ''/oradata/supportdb/onlinelog/group_12.336.988382079'' ";
+SQL "alter database rename file ''+ARCHDG/supportdb/onlinelog/group_12.257.988382083'' TO ''/oradata/supportdb/onlinelog/group_12.257.988382083'' ";
+SQL "alter database rename file ''+DATADG/supportdb/onlinelog/group_13.337.988382091'' TO ''/oradata/supportdb/onlinelog/group_13.337.988382091'' ";
+SQL "alter database rename file ''+ARCHDG/supportdb/onlinelog/group_13.258.988382095'' TO ''/oradata/supportdb/onlinelog/group_13.258.988382095'' ";
+SQL "alter database rename file ''+DATADG/supportdb/onlinelog/group_14.338.988382099'' TO ''/oradata/supportdb/onlinelog/group_14.338.988382099'' ";
+SQL "alter database rename file ''+ARCHDG/supportdb/onlinelog/group_14.259.988382103'' TO ''/oradata/supportdb/onlinelog/group_14.259.988382103'' ";
+SQL "alter database rename file ''+DATADG/supportdb/onlinelog/group_15.339.988382109'' TO ''/oradata/supportdb/onlinelog/group_15.339.988382109'' ";
+SQL "alter database rename file ''+ARCHDG/supportdb/onlinelog/group_15.260.988382113'' TO ''/oradata/supportdb/onlinelog/group_15.260.988382113'' ";
+SQL "alter database rename file ''+DATADG/supportdb/onlinelog/group_16.340.988382119'' TO ''/oradata/supportdb/onlinelog/group_16.340.988382119'' ";
+SQL "alter database rename file ''+ARCHDG/supportdb/onlinelog/group_16.261.988382123'' TO ''/oradata/supportdb/onlinelog/group_16.261.988382123'' ";
+SQL "alter database rename file ''+DATADG/supportdb/onlinelog/group_4.316.988382329'' TO ''/oradata/supportdb/onlinelog/group_4.316.988382329'' ";
+SQL "alter database rename file ''+ARCHDG/supportdb/onlinelog/group_4.263.988382333'' TO ''/oradata/supportdb/onlinelog/group_4.263.988382333'' ";
+SQL "alter database rename file ''+DATADG/supportdb/onlinelog/group_5.341.988382339'' TO ''/oradata/supportdb/onlinelog/group_5.341.988382339'' ";
+SQL "alter database rename file ''+ARCHDG/supportdb/onlinelog/group_5.264.988382343'' TO ''/oradata/supportdb/onlinelog/group_5.264.988382343'' ";
+SQL "alter database rename file ''+DATADG/supportdb/onlinelog/group_6.342.988382347'' TO ''/oradata/supportdb/onlinelog/group_6.342.988382347'' ";
+SQL "alter database rename file ''+ARCHDG/supportdb/onlinelog/group_6.265.988382351'' TO ''/oradata/supportdb/onlinelog/group_6.265.988382351'' ";
+SQL "alter database rename file ''+DATADG/supportdb/onlinelog/group_2.262.988382461'' TO ''/oradata/supportdb/onlinelog/group_2.262.988382461'' ";
+SQL "alter database rename file ''+ARCHDG/supportdb/onlinelog/group_2.267.988382467'' TO ''/oradata/supportdb/onlinelog/group_2.267.988382467'' ";
+SQL "alter database rename file ''+ARCHDG/supportdb/onlinelog/group_17.1211.1052727481'' TO ''/oradata/supportdb/onlinelog/group_17.1211.1052727481'' ";
+SQL "alter database rename file ''+DATADG/supportdb/onlinelog/group_17.432.1052727483'' TO ''/oradata/supportdb/onlinelog/group_17.432.1052727483'' ";
+SQL "alter database rename file ''+ARCHDG/supportdb/onlinelog/group_18.736.1052727483'' TO ''/oradata/supportdb/onlinelog/group_18.736.1052727483'' ";
+SQL "alter database rename file ''+DATADG/supportdb/onlinelog/group_18.433.1052727485'' TO ''/oradata/supportdb/onlinelog/group_18.433.1052727485'' ";
+SQL "alter database rename file ''+ARCHDG/supportdb/onlinelog/group_19.800.1052727485'' TO ''/oradata/supportdb/onlinelog/group_19.800.1052727485'' ";
+SQL "alter database rename file ''+DATADG/supportdb/onlinelog/group_19.434.1052727487'' TO ''/oradata/supportdb/onlinelog/group_19.434.1052727487'' ";
+SQL "alter database rename file ''+ARCHDG/supportdb/onlinelog/group_20.1116.1052727487'' TO ''/oradata/supportdb/onlinelog/group_20.1116.1052727487'' ";
+SQL "alter database rename file ''+DATADG/supportdb/onlinelog/group_20.435.1052727489'' TO ''/oradata/supportdb/onlinelog/group_20.435.1052727489'' ";
+SQL "alter database rename file ''+ARCHDG/supportdb/onlinelog/group_21.658.1052727489'' TO ''/oradata/supportdb/onlinelog/group_21.658.1052727489'' ";
+SQL "alter database rename file ''+DATADG/supportdb/onlinelog/group_21.436.1052727489'' TO ''/oradata/supportdb/onlinelog/group_21.436.1052727489'' ";
+SQL "alter database rename file ''+ARCHDG/supportdb/onlinelog/group_22.718.1052727491'' TO ''/oradata/supportdb/onlinelog/group_22.718.1052727491'' ";
+SQL "alter database rename file ''+DATADG/supportdb/onlinelog/group_22.437.1052727491'' TO ''/oradata/supportdb/onlinelog/group_22.437.1052727491'' ";
+SQL "alter database rename file ''+ARCHDG/supportdb/onlinelog/group_23.638.1052727493'' TO ''/oradata/supportdb/onlinelog/group_23.638.1052727493'' ";
+SQL "alter database rename file ''+DATADG/supportdb/onlinelog/group_23.438.1052727493'' TO ''/oradata/supportdb/onlinelog/group_23.438.1052727493'' ";
+SQL "alter database rename file ''+ARCHDG/supportdb/onlinelog/group_24.1107.1052727495'' TO ''/oradata/supportdb/onlinelog/group_24.1107.1052727495'' ";
+SQL "alter database rename file ''+DATADG/supportdb/onlinelog/group_24.439.1052727495'' TO ''/oradata/supportdb/onlinelog/group_24.439.1052727495'' ";
+SQL "alter database rename file ''+ARCHDG/supportdb/onlinelog/group_25.869.1052727497'' TO ''/oradata/supportdb/onlinelog/group_25.869.1052727497'' ";
+SQL "alter database rename file ''+DATADG/supportdb/onlinelog/group_25.440.1052727497'' TO ''/oradata/supportdb/onlinelog/group_25.440.1052727497'' ";
+SQL "alter database rename file ''+ARCHDG/supportdb/onlinelog/group_26.482.1052727499'' TO ''/oradata/supportdb/onlinelog/group_26.482.1052727499'' ";
+SQL "alter database rename file ''+DATADG/supportdb/onlinelog/group_26.441.1052727499'' TO ''/oradata/supportdb/onlinelog/group_26.441.1052727499'' ";
+SQL "alter database rename file ''+ARCHDG/supportdb/onlinelog/group_27.829.1052727499'' TO ''/oradata/supportdb/onlinelog/group_27.829.1052727499'' ";
+SQL "alter database rename file ''+DATADG/supportdb/onlinelog/group_27.442.1052727501'' TO ''/oradata/supportdb/onlinelog/group_27.442.1052727501'' ";
+SQL "alter database rename file ''+ARCHDG/supportdb/onlinelog/group_28.834.1052727501'' TO ''/oradata/supportdb/onlinelog/group_28.834.1052727501'' ";
+SQL "alter database rename file ''+DATADG/supportdb/onlinelog/group_28.443.1052727503'' TO ''/oradata/supportdb/onlinelog/group_28.443.1052727503'' ";
+SQL "alter database rename file ''+ARCHDG/supportdb/onlinelog/group_29.1114.1052727503'' TO ''/oradata/supportdb/onlinelog/group_29.1114.1052727503'' ";
+SQL "alter database rename file ''+DATADG/supportdb/onlinelog/group_29.444.1052727505'' TO ''/oradata/supportdb/onlinelog/group_29.444.1052727505'' ";
+SQL "alter database rename file ''+ARCHDG/supportdb/onlinelog/group_30.1128.1052727505'' TO ''/oradata/supportdb/onlinelog/group_30.1128.1052727505'' ";
+SQL "alter database rename file ''+DATADG/supportdb/onlinelog/group_30.445.1052727505'' TO ''/oradata/supportdb/onlinelog/group_30.445.1052727505'' ";
+
+
+# set target time for all operations in the RUN block	
+set until time= "to_date('2021-10-05 11:31:00','yyyy-mm-dd hh24:mi:ss')";
+
+restore database;
+
+SWITCH DATAFILE ALL;
+switch TEMPFILE ALL;
+
+recover database;
+
+release channel ch00;
+release channel ch01;
+release channel ch02;
+release channel ch03;
+}
